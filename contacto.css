@@ -1,0 +1,124 @@
+/* --- CONTENEDOR PRINCIPAL --- */
+.contacto-contenedor {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  margin-bottom: 60px;
+}
+
+/* --- FORMULARIO --- */
+.formulario-contacto {
+  flex: 1;
+  background-color: #fbceb7;
+  border-radius: 16px;
+  padding: 30px;
+}
+
+.formulario-contacto h3 {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.4rem;
+  color: #5a3a5a;
+  margin-bottom: 25px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.campo label {
+  font-size: 0.85rem;
+  color: #5a3a5a;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.campo input,
+.campo textarea {
+  padding: 10px 15px;
+  border: 2px solid #a4a2cc;
+  border-radius: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  color: #5a3a5a;
+  background-color: #ffefba;
+  resize: vertical;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+  outline: none;
+  border-color: #d86d9c;
+}
+
+.formulario-contacto button {
+  width: 100%;
+  padding: 12px;
+  background-color: #d86d9c;
+  color: #ffefba;
+  border: none;
+  border-radius: 20px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.formulario-contacto button:hover {
+  background-color: #a76e9c;
+}
+
+/* --- INFO Y MAPA --- */
+.info-contacto {
+  flex: 1;
+}
+
+.info-contacto h3 {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.4rem;
+  color: #a76e9c;
+  margin-bottom: 20px;
+}
+
+.datos {
+  list-style: none;
+  margin-bottom: 25px;
+}
+
+.datos li {
+  font-size: 0.95rem;
+  color: #5a3a5a;
+  margin-bottom: 10px;
+}
+
+.info-contacto iframe {
+  border-radius: 16px;
+  width: 100%;
+}
+
+/* ================================
+   MEDIA QUERIES — CONTACTO
+   ================================ */
+
+@media (max-width: 768px) {
+  .contacto-contenedor {
+    flex-direction: column;
+  }
+
+  .formulario-contacto,
+  .info-contacto {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .formulario-contacto {
+    padding: 20px;
+  }
+
+  .campo input,
+  .campo textarea {
+    width: 100%;
+  }
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto — Gopa Tech</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="contacto.css" />
+</head>
+<body>
+
+  <!-- ENCABEZADO -->
+  <header>
+    <h1>Gopa Tech</h1>
+    <p>Fun & Aesthetic Desk Accessories</p>
+  </header>
+
+  <!-- NAVEGACIÓN -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="tienda.html">Tienda</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+      <li><a href="carrito.html">Carrito</a></li>
+    </ul>
+  </nav>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main>
+
+    <!-- TÍTULO -->
+    <section class="titulo-pagina">
+      <h2>Contacto</h2>
+      <p>¿Tenés alguna pregunta? ¡Escribinos! 💌</p>
+    </section>
+
+    <!-- CONTENEDOR CONTACTO -->
+    <section class="contacto-contenedor">
+
+      <!-- FORMULARIO -->
+      <section class="formulario-contacto">
+        <h3>Envianos un mensaje</h3>
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+
+          <div class="campo">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required />
+          </div>
+
+          <div class="campo">
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" name="email" placeholder="tu@email.com" required />
+          </div>
+
+          <div class="campo">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="5" placeholder="¿En qué podemos ayudarte?" required></textarea>
+          </div>
+
+          <button type="submit">Enviar mensaje</button>
+
+        </form>
+      </section>
+
+      <!-- INFO Y MAPA -->
+      <section class="info-contacto">
+        <h3>Dónde encontrarnos</h3>
+
+        <ul class="datos">
+          <li>📍 Ac. Siempreviva 742, Springfield</li>
+          <li>📧 hola@gopatech.com</li>
+          <li>📞 +54 9 261 000-0000</li>
+        </ul>
+
+        <!-- MAPA EMBEBIDO -->
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3347.1!2d-68.85!3d-32.89!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzLCsDUzJzI0LjAiUyA2OMKwNTEnMDAuMCJX!5e0!3m2!1ses!2sar!4v1234567890"
+          width="100%"
+          height="280"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          title="Mapa de ubicación Gopa Tech">
+        </iframe>
+
+      </section>
+
+    </section>
+
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer>
+    <p>© 2025 Gopa Tech. Todos los derechos reservados.</p>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="tienda.html">Tienda</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="carrito.html">Carrito</a></li>
+      </ul>
+    </nav>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,458 @@
+/* ================================
+   GOPA TECH — styles.css
+   ================================ */
+
+/* --- Google Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&family=Poppins:wght@400;500&display=swap');
+
+/* --- Reset básico --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #ffefba;
+  color: #5a3a5a;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: #a76e9c;
+}
+
+ul {
+  list-style: none;
+}
+
+h1, h2, h3 {
+  font-family: 'Nunito', sans-serif;
+}
+
+/* ================================
+   HEADER / BANNER
+   ================================ */
+.banner {
+  background: linear-gradient(to right, #fbceb7, #a4a2cc, #d86d9c);
+  padding: 40px 40px;
+  min-height: 280px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.banner h1 {
+  font-size: 1.8rem;
+  color: #5a3a5a;
+  font-weight: 800;
+  position: absolute;
+  top: 20px;
+  left: 40px;
+}
+
+.banner-centro {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.banner-centro h2 {
+  font-size: 2.5rem;
+  color: #5a3a5a;
+  margin-bottom: 15px;
+}
+
+.banner-centro p {
+  font-size: 1.1rem;
+  color: #5a3a5a;
+  margin-bottom: 25px;
+}
+
+.banner-centro a {
+  background-color: #d86d9c;
+  color: #ffefba;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  display: inline-block;
+}
+
+.banner-centro a:hover {
+  background-color: #a76e9c;
+}
+
+/* ================================
+   NAV
+   ================================ */
+nav {
+  background-color: #a76e9c;
+  padding: 12px 40px;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+nav ul li a {
+  color: #ffefba;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+nav ul li a:hover {
+  color: #fbceb7;
+}
+
+/* ================================
+   MAIN
+   ================================ */
+main {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ================================
+   HERO
+   ================================ */
+.hero {
+  background: linear-gradient(to right, #fbceb7, #a4a2cc);
+  padding: 60px 40px;
+  text-align: center;
+  border-radius: 16px;
+  margin-bottom: 60px;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  color: #5a3a5a;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: #5a3a5a;
+  margin-bottom: 25px;
+}
+
+.hero a {
+  background-color: #d86d9c;
+  color: #ffefba;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.hero a:hover {
+  background-color: #a76e9c;
+}
+
+/* ================================
+   PRODUCTOS DESTACADOS — FLEXBOX
+   ================================ */
+.productos-destacados {
+  margin-bottom: 60px;
+}
+
+.productos-destacados h2 {
+  font-size: 1.8rem;
+  color: #a76e9c;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.contenedor-productos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.card-producto {
+  background-color: #fbceb7;
+  border-radius: 16px;
+  padding: 20px;
+  width: 280px;
+  text-align: center;
+}
+
+.card-producto img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.card-producto h3 {
+  font-size: 1.1rem;
+  color: #5a3a5a;
+  margin-bottom: 8px;
+}
+
+.card-producto p {
+  font-size: 0.9rem;
+  color: #5a3a5a;
+  margin-bottom: 8px;
+}
+
+.card-producto .precio {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 1.2rem;
+  color: #d86d9c;
+  margin-bottom: 15px;
+}
+
+.card-producto a {
+  background-color: #a76e9c;
+  color: #ffefba;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  display: inline-block;
+}
+
+.card-producto a:hover {
+  background-color: #d86d9c;
+}
+
+/* ================================
+   RESEÑAS — GRID
+   ================================ */
+.resenas {
+  margin-bottom: 60px;
+}
+
+.resenas h2 {
+  font-size: 1.8rem;
+  color: #a76e9c;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.resenas {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.resenas h2 {
+  grid-column: 1 / 4;
+}
+
+.card-resena {
+  background-color: #a4a2cc;
+  border-radius: 16px;
+  padding: 25px;
+}
+
+.card-resena p {
+  font-size: 0.95rem;
+  color: #ffefba;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+.card-resena p strong {
+  font-style: normal;
+  color: #ffefba;
+}
+
+/* ================================
+   NEWSLETTER
+   ================================ */
+.newsletter {
+  background-color: #a76e9c;
+  border-radius: 16px;
+  padding: 40px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.newsletter h2 {
+  font-size: 1.8rem;
+  color: #ffefba;
+  margin-bottom: 10px;
+}
+
+.newsletter p {
+  color: #fbceb7;
+  margin-bottom: 25px;
+}
+
+.newsletter form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.newsletter input {
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  width: 280px;
+}
+
+.newsletter button {
+  padding: 10px 25px;
+  border-radius: 20px;
+  border: none;
+  background-color: #d86d9c;
+  color: #ffefba;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.newsletter button:hover {
+  background-color: #ffefba;
+  color: #d86d9c;
+}
+
+/* ================================
+   FOOTER
+   ================================ */
+footer {
+  background-color: #d86d9c;
+  padding: 25px 40px;
+  text-align: center;
+}
+
+footer p {
+  color: #ffefba;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+footer nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  background-color: transparent;
+  padding: 0;
+}
+
+footer nav ul li a {
+  color: #ffefba;
+  font-size: 0.85rem;
+}
+
+footer nav ul li a:hover {
+  color: #fbceb7;
+}
+
+/* ================================
+   TÍTULO DE PÁGINA
+   ================================ */
+.titulo-pagina {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.titulo-pagina h2 {
+  font-size: 2rem;
+  color: #a76e9c;
+  margin-bottom: 10px;
+}
+
+.titulo-pagina p {
+  font-size: 1rem;
+  color: #5a3a5a;
+}
+
+/* ================================
+   CATÁLOGO — FLEXBOX
+   ================================ */
+.catalogo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 60px;
+}
+
+/* ================================
+   MEDIA QUERIES
+   ================================ */
+
+/* Tablet */
+@media (max-width: 768px) {
+  .resenas {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .resenas h2 {
+    grid-column: 1 / 3;
+  }
+
+  nav ul {
+    gap: 15px;
+  }
+
+  .hero h2 {
+    font-size: 1.8rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  header {
+    padding: 20px;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero {
+    padding: 40px 20px;
+  }
+
+  .hero h2 {
+    font-size: 1.5rem;
+  }
+
+  .contenedor-productos {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .resenas {
+    grid-template-columns: 1fr;
+  }
+
+  .resenas h2 {
+    grid-column: 1 / 2;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  footer nav ul {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
