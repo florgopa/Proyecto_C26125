@@ -38,7 +38,7 @@ Durante el desarrollo usé IA como asistente principalmente para trabajar las Me
 
 ## Demo
 
-🔗 https://florgopa.github.io/Proyecto_C26125/ ← reemplazar con tu URL
+🔗 https://florgopa.github.io/Proyecto_C26125/
 
 ---
 
