@@ -21,9 +21,27 @@
       <li><a href="index.html">Inicio</a></li>
       <li><a href="tienda.html">Tienda</a></li>
       <li><a href="contacto.html">Contacto</a></li>
-      <li><a href="carrito.html">Carrito</a></li>
+      <li><button class="link-carrito" id="abrir-carrito">Carrito 🛒 <span id="contador-carrito">(0)</span></button></li>
     </ul>
   </nav>
+
+  <!-- PANEL LATERAL DEL CARRITO -->
+  <div id="fondo-carrito" class="fondo-carrito"></div>
+  <aside id="panel-carrito" class="panel-carrito">
+    <div class="panel-carrito-header">
+      <h2>Tu Carrito 🛍️</h2>
+      <button id="cerrar-carrito" class="cerrar-carrito" aria-label="Cerrar carrito">✕</button>
+    </div>
+
+    <div id="panel-carrito-items" class="panel-carrito-items">
+      <!-- Se llena con JavaScript -->
+    </div>
+
+    <div class="panel-carrito-footer">
+      <p class="panel-carrito-total">Total: <span id="panel-carrito-total">$0</span></p>
+      <a href="carrito.html" class="btn-ver-carrito">Ver carrito completo</a>
+    </div>
+  </aside>
 
   <!-- CONTENIDO PRINCIPAL -->
   <main>
@@ -102,5 +120,6 @@
     </nav>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>

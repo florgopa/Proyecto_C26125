@@ -3,7 +3,7 @@
    ================================ */
 
 /* --- Google Fonts --- */
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&family=Poppins:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&family=Poppins:wght@400;500&family=Pacifico&family=Sora:wght@400;600;700&display=swap');
 
 /* --- Reset básico --- */
 * {
@@ -39,7 +39,7 @@ h1, h2, h3 {
    HEADER / BANNER
    ================================ */
 .banner {
-  background: linear-gradient(to right, #fbceb7, #a4a2cc, #d86d9c);
+  background: linear-gradient(to right, #fbceb7, #a4a2cc);
   padding: 40px 40px;
   min-height: 280px;
   position: relative;
@@ -48,13 +48,12 @@ h1, h2, h3 {
   justify-content: center;
 }
 
-.banner h1 {
-  font-size: 1.8rem;
-  color: #5a3a5a;
-  font-weight: 800;
+.logo-imagen {
   position: absolute;
   top: 20px;
   left: 40px;
+  max-height: 90px;
+  width: auto;
 }
 
 .banner-centro {
@@ -232,6 +231,22 @@ main {
   background-color: #d86d9c;
 }
 
+.card-producto .btn-agregar {
+  background-color: #a76e9c;
+  color: #ffefba;
+  padding: 8px 20px;
+  border-radius: 20px;
+  border: none;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.card-producto .btn-agregar:hover {
+  background-color: #d86d9c;
+}
+
 /* ================================
    RESEÑAS — GRID
    ================================ */
@@ -246,14 +261,10 @@ main {
   text-align: center;
 }
 
-.resenas {
+.lista-resenas {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
-}
-
-.resenas h2 {
-  grid-column: 1 / 4;
 }
 
 .card-resena {
@@ -272,6 +283,11 @@ main {
 .card-resena p strong {
   font-style: normal;
   color: #ffefba;
+}
+
+.card-resena .estrellas {
+  font-size: 0.9rem;
+  margin-bottom: 8px;
 }
 
 /* ================================
@@ -392,17 +408,335 @@ footer nav ul li a:hover {
 }
 
 /* ================================
+   BOTÓN CARRITO EN NAV
+   ================================ */
+.link-carrito {
+  background: none;
+  border: none;
+  color: #ffefba;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0;
+}
+
+.link-carrito:hover {
+  color: #fbceb7;
+}
+
+/* ================================
+   PANEL LATERAL DEL CARRITO
+   ================================ */
+.fondo-carrito {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 998;
+  display: none;
+}
+
+.fondo-carrito.activo {
+  display: block;
+}
+
+.panel-carrito {
+  position: fixed;
+  top: 0;
+  right: -380px;
+  width: 350px;
+  height: 100%;
+  background-color: #ffefba;
+  z-index: 999;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  transition: right 0.3s ease;
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.panel-carrito.activo {
+  right: 0;
+}
+
+.panel-carrito-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #a4a2cc;
+  padding-bottom: 15px;
+}
+
+.panel-carrito-header h2 {
+  font-size: 1.4rem;
+  color: #a76e9c;
+}
+
+.cerrar-carrito {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  color: #5a3a5a;
+  cursor: pointer;
+}
+
+.panel-carrito-items {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.panel-item {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #fbceb7;
+}
+
+.panel-item img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 10px;
+  background-color: #ffffff;
+}
+
+.panel-item-info {
+  flex: 1;
+}
+
+.panel-item-info h4 {
+  font-size: 0.85rem;
+  color: #5a3a5a;
+  margin-bottom: 4px;
+}
+
+.panel-item-info p {
+  font-size: 0.8rem;
+  color: #a76e9c;
+  font-weight: 700;
+}
+
+.panel-item-cantidad {
+  font-size: 0.75rem;
+  color: #5a3a5a;
+}
+
+.panel-carrito-footer {
+  border-top: 2px solid #a4a2cc;
+  padding-top: 15px;
+}
+
+.panel-carrito-total {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: #5a3a5a;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.btn-ver-carrito {
+  display: block;
+  text-align: center;
+  background-color: #d86d9c;
+  color: #ffefba;
+  padding: 10px;
+  border-radius: 20px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+}
+
+.btn-ver-carrito:hover {
+  background-color: #a76e9c;
+}
+
+.carrito-vacio-mensaje {
+  text-align: center;
+  color: #5a3a5a;
+  padding: 30px 0;
+}
+
+/* ================================
+   PÁGINA CARRITO COMPLETA
+   ================================ */
+.carrito-pagina {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  margin-bottom: 60px;
+}
+
+.lista-carrito {
+  flex: 2;
+}
+
+.item-carrito {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background-color: #fbceb7;
+  border-radius: 16px;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+}
+
+.item-carrito img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 10px;
+  background-color: #ffffff;
+}
+
+.item-carrito-info {
+  flex: 1;
+}
+
+.item-carrito-info h4 {
+  font-size: 1rem;
+  color: #5a3a5a;
+  margin-bottom: 5px;
+}
+
+.item-carrito-info p {
+  font-size: 0.9rem;
+  color: #a76e9c;
+  font-weight: 700;
+}
+
+.item-carrito-cantidad {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-cantidad {
+  background-color: #a76e9c;
+  color: #ffefba;
+  border: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-cantidad:hover {
+  background-color: #d86d9c;
+}
+
+.cantidad-numero {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  color: #5a3a5a;
+  min-width: 20px;
+  text-align: center;
+}
+
+.item-carrito-subtotal {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  color: #d86d9c;
+  min-width: 80px;
+  text-align: right;
+}
+
+.btn-eliminar {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #5a3a5a;
+}
+
+.btn-eliminar:hover {
+  color: #d86d9c;
+}
+
+.resumen-carrito {
+  flex: 1;
+  background-color: #a4a2cc;
+  border-radius: 16px;
+  padding: 25px;
+  position: sticky;
+  top: 20px;
+}
+
+.resumen-carrito h3 {
+  font-size: 1.3rem;
+  color: #ffefba;
+  margin-bottom: 15px;
+}
+
+.resumen-linea {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 1.2rem;
+  color: #ffefba;
+  margin-bottom: 20px;
+}
+
+.btn-finalizar {
+  width: 100%;
+  padding: 12px;
+  background-color: #d86d9c;
+  color: #ffefba;
+  border: none;
+  border-radius: 20px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.btn-finalizar:hover {
+  background-color: #ffefba;
+  color: #a76e9c;
+}
+
+.mensaje-compra {
+  margin-top: 15px;
+  text-align: center;
+  font-weight: 700;
+  color: #ffefba;
+}
+
+.carrito-vacio-pagina {
+  text-align: center;
+  padding: 60px 20px;
+  color: #5a3a5a;
+}
+
+.carrito-vacio-pagina a {
+  display: inline-block;
+  margin-top: 15px;
+  background-color: #d86d9c;
+  color: #ffefba;
+  padding: 10px 25px;
+  border-radius: 20px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+}
+
+.carrito-vacio-pagina a:hover {
+  background-color: #a76e9c;
+}
+
+/* ================================
    MEDIA QUERIES
    ================================ */
 
 /* Tablet */
 @media (max-width: 768px) {
-  .resenas {
+  .lista-resenas {
     grid-template-columns: 1fr 1fr;
-  }
-
-  .resenas h2 {
-    grid-column: 1 / 3;
   }
 
   nav ul {
@@ -437,12 +771,8 @@ footer nav ul li a:hover {
     align-items: center;
   }
 
-  .resenas {
+  .lista-resenas {
     grid-template-columns: 1fr;
-  }
-
-  .resenas h2 {
-    grid-column: 1 / 2;
   }
 
   nav ul {
@@ -454,5 +784,18 @@ footer nav ul li a:hover {
   footer nav ul {
     flex-direction: column;
     gap: 8px;
+  }
+
+  .panel-carrito {
+    width: 85%;
+    right: -100%;
+  }
+
+  .carrito-pagina {
+    flex-direction: column;
+  }
+
+  .item-carrito {
+    flex-wrap: wrap;
   }
 }

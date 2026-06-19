@@ -3,19 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gopa Tech</title>
+  <meta name="description" content="Revisá y editá los productos de tu carrito de compras en Gopa Tech." />
+  <title>Carrito — Gopa Tech</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <!-- ENCABEZADO / BANNER -->
-  <header class="banner">
-    <img src="img/logo.svg" alt="Gopa Tech" class="logo-imagen" />
-    <div class="banner-centro">
-      <h2>Creative. Expressive. Productive.</h2>
-      <p>Descubrí los accesorios de escritorio más lindos para tu setup.</p>
-      <a href="tienda.html">Ver productos</a>
-    </div>
+  <!-- ENCABEZADO -->
+  <header>
+    <h1>Gopa Tech</h1>
+    <p>Fun & Aesthetic Desk Accessories</p>
   </header>
 
   <!-- NAVEGACIÓN -->
@@ -49,32 +46,26 @@
   <!-- CONTENIDO PRINCIPAL -->
   <main>
 
-    <!-- SECCIÓN PRODUCTOS DESTACADOS -->
-    <section class="productos-destacados">
-      <h2>Productos destacados</h2>
-
-      <div class="contenedor-productos" id="destacados">
-      </div>
+    <!-- TÍTULO -->
+    <section class="titulo-pagina">
+      <h2>Tu Carrito de Compras</h2>
+      <p>Revisá, editá y confirmá tu pedido 🛍️</p>
     </section>
 
-    <!-- SECCIÓN RESEÑAS -->
-    <section class="resenas">
-      <h2>Lo que dicen nuestras clientas</h2>
+    <!-- CONTENEDOR DEL CARRITO -->
+    <section class="carrito-pagina">
 
-      <div id="lista-resenas" class="lista-resenas">
+      <div id="lista-carrito" class="lista-carrito">
         <!-- Se llena con JavaScript -->
       </div>
 
-    </section>
+      <div class="resumen-carrito">
+        <h3>Resumen</h3>
+        <p class="resumen-linea">Total: <span id="total-carrito">$0</span></p>
+        <button id="finalizar-compra" class="btn-finalizar">Finalizar compra</button>
+        <p id="mensaje-compra" class="mensaje-compra"></p>
+      </div>
 
-    <!-- SECCIÓN NEWSLETTER -->
-    <section class="newsletter">
-      <h2>Suscribite a nuestro newsletter</h2>
-      <p>Enterate primero de los nuevos productos y ofertas especiales.</p>
-      <form>
-        <input type="email" placeholder="Tu correo electrónico" />
-        <button type="submit">Suscribirme</button>
-      </form>
     </section>
 
   </main>
