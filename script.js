@@ -1,8 +1,4 @@
-// ================================
-// GOPA TECH — script.js
-// ================================
-
-// --- Categorías de la API que vamos a combinar ---
+// --- Categorías de la API ---
 const categorias = ["mobile-accessories", "smartphones", "laptops", "tablets"];
 
 // --- Referencias al DOM ---
@@ -11,9 +7,8 @@ const mensajeCarga = document.getElementById("mensaje-carga");
 const destacados = document.getElementById("destacados");
 const listaResenas = document.getElementById("lista-resenas");
 
-// ================================
+
 // TRAER PRODUCTOS DE LA API
-// ================================
 async function obtenerProductos() {
   try {
     let productos = [];
@@ -33,9 +28,7 @@ async function obtenerProductos() {
   }
 }
 
-// ================================
 // MOSTRAR PRODUCTOS EN PANTALLA
-// ================================
 function mostrarProductos(productos) {
   mensajeCarga.style.display = "none";
 
@@ -60,9 +53,68 @@ function mostrarProductos(productos) {
   activarBotonesAgregar(productos);
 }
 
-// ================================
+// VALIDACIÓN DEL FORMULARIO DE CONTACTO
+const formContacto = document.getElementById("form-contacto");
+
+if (formContacto) {
+  formContacto.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const nombre = document.getElementById("nombre");
+    const email = document.getElementById("email");
+    const mensaje = document.getElementById("mensaje");
+
+    const errorNombre = document.getElementById("error-nombre");
+    const errorEmail = document.getElementById("error-email");
+    const errorMensaje = document.getElementById("error-mensaje");
+    const exitoContacto = document.getElementById("exito-contacto");
+
+    // Limpiamos errores anteriores
+    errorNombre.textContent = "";
+    errorEmail.textContent = "";
+    errorMensaje.textContent = "";
+    exitoContacto.textContent = "";
+    nombre.classList.remove("input-error");
+    email.classList.remove("input-error");
+    mensaje.classList.remove("input-error");
+
+    let valido = true;
+
+    // Validar nombre
+    if (nombre.value.trim() === "") {
+      errorNombre.textContent = "Por favor ingresá tu nombre.";
+      nombre.classList.add("input-error");
+      valido = false;
+    }
+
+    // Validar email con expresión regular
+    const formatoEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (email.value.trim() === "") {
+      errorEmail.textContent = "Por favor ingresá tu correo electrónico.";
+      email.classList.add("input-error");
+      valido = false;
+    } else if (!formatoEmail.test(email.value.trim())) {
+      errorEmail.textContent = "El formato del correo no es válido.";
+      email.classList.add("input-error");
+      valido = false;
+    }
+
+    // Validar mensaje
+    if (mensaje.value.trim() === "") {
+      errorMensaje.textContent = "Por favor escribí tu mensaje.";
+      mensaje.classList.add("input-error");
+      valido = false;
+    }
+
+    // Si todo está bien, enviamos
+    if (valido) {
+      exitoContacto.textContent = "¡Mensaje enviado! Te respondemos a la brevedad 🌸";
+      formContacto.reset();
+    }
+  });
+}
+
 // PANEL LATERAL DEL CARRITO
-// ================================
 const botonAbrirCarrito = document.getElementById("abrir-carrito");
 const botonCerrarCarrito = document.getElementById("cerrar-carrito");
 const panelCarrito = document.getElementById("panel-carrito");
@@ -127,9 +179,8 @@ function renderizarPanelCarrito() {
   panelTotal.textContent = "$" + total;
 }
 
-// ================================
+
 // CARRITO — AGREGAR PRODUCTOS
-// ================================
 function activarBotonesAgregar(productos) {
   const botones = document.querySelectorAll(".btn-agregar");
 
@@ -170,9 +221,8 @@ function agregarAlCarrito(producto) {
   abrirPanelCarrito();
 }
 
-// ================================
+
 // PRODUCTOS DESTACADOS (index.html)
-// ================================
 async function obtenerDestacados() {
   try {
     let productos = [];
@@ -203,9 +253,7 @@ async function obtenerDestacados() {
   }
 }
 
-// ================================
-// RESEÑAS (vienen dentro de cada producto)
-// ================================
+// RESEÑAS
 function mostrarResenas(productos) {
   // Juntamos todas las reviews de todos los productos en un solo array
   let todasLasReviews = [];
@@ -257,9 +305,7 @@ function mostrarDestacados(productos) {
   }
 }
 
-// ================================
 // PÁGINA CARRITO COMPLETA (carrito.html)
-// ================================
 const listaCarrito = document.getElementById("lista-carrito");
 const totalCarritoEl = document.getElementById("total-carrito");
 const botonFinalizar = document.getElementById("finalizar-compra");
@@ -385,9 +431,7 @@ if (botonFinalizar) {
   });
 }
 
-// ================================
 // LOCALSTORAGE — FUNCIONES AUXILIARES
-// ================================
 function obtenerCarrito() {
   const datos = localStorage.getItem("carritoGopaTech");
   return datos ? JSON.parse(datos) : [];
@@ -397,9 +441,7 @@ function guardarCarrito(carrito) {
   localStorage.setItem("carritoGopaTech", JSON.stringify(carrito));
 }
 
-// ================================
 // CONTADOR DEL CARRITO (nav)
-// ================================
 function actualizarContador() {
   const contador = document.getElementById("contador-carrito");
   if (!contador) return;
@@ -412,9 +454,7 @@ function actualizarContador() {
   contador.textContent = "(" + totalItems + ")";
 }
 
-// ================================
 // INICIO
-// ================================
 actualizarContador();
 
 // Solo buscamos productos si estamos en la página de la tienda
