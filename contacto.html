@@ -3,30 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contacto — Gopa Tech</title>
+  <title>Contact — Gopa Tech</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="contacto.css" />
 </head>
 <body>
 
   <!-- ENCABEZADO -->
-   <header class="banner">
+    <header class="banner">
     <img src="img/logo.svg" alt="Gopa Tech" class="logo-imagen" />
     <div class="banner-centro">
       <h2>Creative. Expressive. Productive.</h2>
-      <p>Descubrí los accesorios de escritorio más lindos para tu setup.</p>
-      <a href="tienda.html">Ver productos</a>
+      <p>Discover the cutest desk accessories for your setup.</p>
+      <a href="tienda.html">Shop now</a>
     </div>
   </header>
-
 
   <!-- NAVEGACIÓN -->
   <nav>
     <ul>
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="tienda.html">Tienda</a></li>
-      <li><a href="contacto.html">Contacto</a></li>
-      <li><button class="link-carrito" id="abrir-carrito">Carrito 🛒 <span id="contador-carrito">(0)</span></button></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="tienda.html">Shop</a></li>
+      <li><a href="contacto.html">Contact</a></li>
+      <li><button class="link-carrito" id="abrir-carrito">Cart<span id="contador-carrito">(0)</span></button></li>
     </ul>
   </nav>
 
@@ -34,7 +33,7 @@
   <div id="fondo-carrito" class="fondo-carrito"></div>
   <aside id="panel-carrito" class="panel-carrito">
     <div class="panel-carrito-header">
-      <h2>Tu Carrito 🛍️</h2>
+      <h2>Tu Cart 🛍️</h2>
       <button id="cerrar-carrito" class="cerrar-carrito" aria-label="Cerrar carrito">✕</button>
     </div>
 
@@ -44,7 +43,7 @@
 
     <div class="panel-carrito-footer">
       <p class="panel-carrito-total">Total: <span id="panel-carrito-total">$0</span></p>
-      <a href="carrito.html" class="btn-ver-carrito">Ver carrito completo</a>
+      <a href="carrito.html" class="btn-ver-carrito">View full cart</a>
     </div>
   </aside>
 
@@ -53,8 +52,8 @@
 
     <!-- TÍTULO -->
     <section class="titulo-pagina">
-      <h2>Contacto</h2>
-      <p>¿Tenés alguna pregunta? ¡Escribinos! 💌</p>
+      <h2>Contact</h2>
+      <p>Have a question? Write to us! 💌</p>
     </section>
 
     <!-- CONTENEDOR CONTACTO -->
@@ -62,28 +61,28 @@
 
       <!-- FORMULARIO -->
       <section class="formulario-contacto">
-        <h3>Envianos un mensaje</h3>
+        <h3>Send us a message</h3>
         <form id="form-contacto" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
 
           <div class="campo">
-            <label for="nombre">Nombre</label>
-            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" />
+            <label for="nombre">Name</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Your name" />
             <span class="error-msg" id="error-nombre"></span>
           </div>
 
           <div class="campo">
-            <label for="email">Correo electrónico</label>
+            <label for="email">Email address</label>
             <input type="email" id="email" name="email" placeholder="tu@email.com" />
             <span class="error-msg" id="error-email"></span>
           </div>
 
           <div class="campo">
-            <label for="mensaje">Mensaje</label>
-            <textarea id="mensaje" name="mensaje" rows="5" placeholder="¿En qué podemos ayudarte?"></textarea>
+            <label for="mensaje">Message</label>
+            <textarea id="mensaje" name="mensaje" rows="5" placeholder="How can we help you?"></textarea>
             <span class="error-msg" id="error-mensaje"></span>
           </div>
 
-          <button type="submit">Enviar mensaje</button>
+          <button type="submit">Send message</button>
           <p id="exito-contacto" class="exito-msg"></p>
 
         </form>
@@ -91,7 +90,7 @@
 
       <!-- INFO Y MAPA -->
       <section class="info-contacto">
-        <h3>Dónde encontrarnos</h3>
+        <h3>Where to find us</h3>
 
         <ul class="datos">
           <li>📍 Ac. Siempreviva 742, Springfield</li>
@@ -121,10 +120,10 @@
     <p>© 2025 Gopa Tech. Todos los derechos reservados.</p>
     <nav>
       <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="tienda.html">Tienda</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-        <li><a href="carrito.html">Carrito</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tienda.html">Shop</a></li>
+        <li><a href="contacto.html">Contact</a></li>
+        <li><a href="carrito.html">Cart</a></li>
       </ul>
     </nav>
   </footer>

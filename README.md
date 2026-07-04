@@ -56,6 +56,8 @@ La validación del formulario con JavaScript requirió repasar varias veces los 
 
 El mayor desafío inicial (igual que en la pre-entrega) siguió siendo el lado creativo: la paleta de colores, el nombre de la tienda, el logo. El lado técnico se fue resolviendo con práctica y repaso.
 
+Además me pareció que quedaba inconsistente que el sitio estuviera construido en español y la api trajera datos en inglés por lo que decidí cambiar el idioma del sitio a inglés para que  se corresponda todo el contenido.
+
 Uso de IA
 
 Durante el desarrollo usé IA como asistente para organizar la estructura del proyecto, resolver dudas sobre Media Queries, entender mejor el funcionamiento de fetch y async/await, y pensar la lógica del carrito con localStorage. También fue útil para discutir decisiones de diseño y encontrar la API más adecuada para la temática de la tienda.

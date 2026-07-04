@@ -1,4 +1,4 @@
-// --- Categorías de la API ---
+// --- Categorías de la API que vamos a combinar ---
 const categorias = ["mobile-accessories", "smartphones", "laptops", "tablets"];
 
 // --- Referencias al DOM ---
@@ -6,7 +6,6 @@ const catalogo = document.getElementById("catalogo");
 const mensajeCarga = document.getElementById("mensaje-carga");
 const destacados = document.getElementById("destacados");
 const listaResenas = document.getElementById("lista-resenas");
-
 
 // TRAER PRODUCTOS DE LA API
 async function obtenerProductos() {
@@ -23,8 +22,8 @@ async function obtenerProductos() {
     mostrarProductos(productos);
 
   } catch (error) {
-    mensajeCarga.textContent = "Hubo un error al cargar los productos. Intentá de nuevo más tarde.";
-    console.log("Error al obtener productos:", error);
+    mensajeCarga.textContent = "There was an error loading products. Please try again later.";
+    console.log("Error fetching products:", error);
   }
 }
 
@@ -43,7 +42,7 @@ function mostrarProductos(productos) {
       <h3>${producto.title}</h3>
       <p>${producto.description.substring(0, 80)}...</p>
       <p class="precio">$${producto.price}</p>
-      <button class="btn-agregar" data-id="${producto.id}">Agregar al carrito</button>
+      <button class="btn-agregar" data-id="${producto.id}">Add to cart</button>
     `;
 
     catalogo.appendChild(card);
@@ -52,6 +51,7 @@ function mostrarProductos(productos) {
   // Una vez creadas las cards, activamos los botones
   activarBotonesAgregar(productos);
 }
+
 
 // VALIDACIÓN DEL FORMULARIO DE CONTACTO
 const formContacto = document.getElementById("form-contacto");
@@ -82,7 +82,7 @@ if (formContacto) {
 
     // Validar nombre
     if (nombre.value.trim() === "") {
-      errorNombre.textContent = "Por favor ingresá tu nombre.";
+      errorNombre.textContent = "Please enter your name.";
       nombre.classList.add("input-error");
       valido = false;
     }
@@ -90,25 +90,25 @@ if (formContacto) {
     // Validar email con expresión regular
     const formatoEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (email.value.trim() === "") {
-      errorEmail.textContent = "Por favor ingresá tu correo electrónico.";
+      errorEmail.textContent = "Please enter your email address.";
       email.classList.add("input-error");
       valido = false;
     } else if (!formatoEmail.test(email.value.trim())) {
-      errorEmail.textContent = "El formato del correo no es válido.";
+      errorEmail.textContent = "The email format is not valid.";
       email.classList.add("input-error");
       valido = false;
     }
 
     // Validar mensaje
     if (mensaje.value.trim() === "") {
-      errorMensaje.textContent = "Por favor escribí tu mensaje.";
+      errorMensaje.textContent = "Please write your message.";
       mensaje.classList.add("input-error");
       valido = false;
     }
 
     // Si todo está bien, enviamos
     if (valido) {
-      exitoContacto.textContent = "¡Mensaje enviado! Te respondemos a la brevedad 🌸";
+      exitoContacto.textContent = "Message sent! We'll get back to you soon 🌸";
       formContacto.reset();
     }
   });
@@ -150,7 +150,7 @@ function renderizarPanelCarrito() {
   panelItems.innerHTML = "";
 
   if (carrito.length === 0) {
-    panelItems.innerHTML = `<p class="carrito-vacio-mensaje">Tu carrito está vacío 🌸</p>`;
+    panelItems.innerHTML = `<p class="carrito-vacio-mensaje">Your cart is empty 🌸</p>`;
     panelTotal.textContent = "$0";
     return;
   }
@@ -168,7 +168,7 @@ function renderizarPanelCarrito() {
       <img src="${item.thumbnail}" alt="${item.title}" />
       <div class="panel-item-info">
         <h4>${item.title}</h4>
-        <p class="panel-item-cantidad">Cantidad: ${item.cantidad}</p>
+        <p class="panel-item-cantidad">Quantity: ${item.cantidad}</p>
         <p>$${subtotal}</p>
       </div>
     `;
@@ -178,7 +178,6 @@ function renderizarPanelCarrito() {
 
   panelTotal.textContent = "$" + total;
 }
-
 
 // CARRITO — AGREGAR PRODUCTOS
 function activarBotonesAgregar(productos) {
@@ -221,7 +220,6 @@ function agregarAlCarrito(producto) {
   abrirPanelCarrito();
 }
 
-
 // PRODUCTOS DESTACADOS (index.html)
 async function obtenerDestacados() {
   try {
@@ -249,11 +247,11 @@ async function obtenerDestacados() {
     }
 
   } catch (error) {
-    console.log("Error al obtener destacados:", error);
+    console.log("Error fetching featured products:", error);
   }
 }
 
-// RESEÑAS
+// RESEÑAS (vienen dentro de cada producto)
 function mostrarResenas(productos) {
   // Juntamos todas las reviews de todos los productos en un solo array
   let todasLasReviews = [];
@@ -298,7 +296,7 @@ function mostrarDestacados(productos) {
       <h3>${producto.title}</h3>
       <p>${producto.description.substring(0, 70)}...</p>
       <p class="precio">$${producto.price}</p>
-      <a href="tienda.html">Ver más</a>
+      <a href="tienda.html">View more</a>
     `;
 
     destacados.appendChild(card);
@@ -318,8 +316,8 @@ function renderizarPaginaCarrito() {
   if (carrito.length === 0) {
     listaCarrito.innerHTML = `
       <div class="carrito-vacio-pagina">
-        <p>Tu carrito está vacío 🌸</p>
-        <a href="tienda.html">Ir a la tienda</a>
+        <p>Your cart is empty 🌸</p>
+        <a href="tienda.html">Go to shop</a>
       </div>
     `;
     totalCarritoEl.textContent = "$0";
@@ -420,14 +418,14 @@ if (botonFinalizar) {
     const carrito = obtenerCarrito();
 
     if (carrito.length === 0) {
-      mensajeCompra.textContent = "Tu carrito está vacío.";
+      mensajeCompra.textContent = "Your cart is empty.";
       return;
     }
 
     guardarCarrito([]);
     actualizarContador();
     renderizarPaginaCarrito();
-    mensajeCompra.textContent = "¡Gracias por tu compra! 🌸 Te enviamos un correo con los detalles.";
+    mensajeCompra.textContent = "Thank you for your purchase! 🌸 We'll send you an email with the details.";
   });
 }
 
@@ -440,6 +438,7 @@ function obtenerCarrito() {
 function guardarCarrito(carrito) {
   localStorage.setItem("carritoGopaTech", JSON.stringify(carrito));
 }
+
 
 // CONTADOR DEL CARRITO (nav)
 function actualizarContador() {
