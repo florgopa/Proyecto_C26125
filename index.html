@@ -8,25 +8,28 @@
 </head>
 <body>
 
-  <!-- ENCABEZADO / BANNER -->
-  <header class="banner">
-    <img src="img/logo.svg" alt="Gopa Tech" class="logo-imagen" />
-    <div class="banner-centro">
-      <h2>Creative. Expressive. Productive.</h2>
-      <p>Discover the cutest desk accessories for your setup.</p>
-      <a href="tienda.html">Shop now</a>
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-brand">
+        <img src="img/logo.svg" alt="Gopa Tech" class="logo-imagen" />
+      </a>
+
+      <nav class="navbar-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="tienda.html">Shop</a></li>
+          <li><a href="contacto.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <button class="link-carrito" id="abrir-carrito">
+        <span class="cart-emoji" aria-hidden="true">🛍️</span>
+        <span class="cart-label">Cart</span>
+        <span id="contador-carrito" class="cart-count">(0)</span>
+      </button>
     </div>
   </header>
-
-  <!-- NAVEGACIÓN -->
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="tienda.html">Shop</a></li>
-      <li><a href="contacto.html">Contact</a></li>
-      <li><button class="link-carrito" id="abrir-carrito">Cart <span id="contador-carrito">(0)</span></button></li>
-    </ul>
-  </nav>
 
   <!-- PANEL LATERAL DEL CARRITO -->
   <div id="fondo-carrito" class="fondo-carrito"></div>
@@ -49,12 +52,35 @@
   <!-- CONTENIDO PRINCIPAL -->
   <main>
 
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <p class="hero-kicker">✨ New season drop</p>
+          <h1 class="hero-title">Creative. Expressive.<br />Productive.</h1>
+          <p class="hero-subtitle">Discover the cutest desk accessories for your setup.</p>
+          <a href="tienda.html" class="btn-primary">Shop now →</a>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <span class="hero-mat"></span>
+          <span class="hero-blob hero-blob--2"></span>
+          <span class="hero-emoji">🎧</span>
+          <span class="hero-emoji hero-emoji--2">⌨️</span>
+          <span class="hero-emoji hero-emoji--3">🖱️</span>
+          <span class="hero-emoji hero-emoji--4">💡</span>
+        </div>
+      </div>
+    </section>
+
     <!-- SECCIÓN PRODUCTOS DESTACADOS -->
     <section class="productos-destacados">
       <h2>Featured Products</h2>
 
       <div class="contenedor-productos" id="destacados">
       </div>
+
+      <a href="tienda.html" class="ver-catalogo">Browse the full shop →</a>
     </section>
 
     <!-- SECCIÓN RESEÑAS -->
@@ -81,15 +107,17 @@
 
   <!-- PIE DE PÁGINA -->
   <footer>
-    <p>© 2025 Gopa Tech. Todos los derechos reservados.</p>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="tienda.html">Shop</a></li>
-        <li><a href="contacto.html">Contact</a></li>
-        <li><a href="carrito.html">Cart</a></li>
-      </ul>
-    </nav>
+    <div class="footer-inner">
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="tienda.html">Shop</a></li>
+          <li><a href="contacto.html">Contact</a></li>
+          <li><a href="carrito.html">Cart</a></li>
+        </ul>
+      </nav>
+      <p>© 2025 Gopa Tech. Todos los derechos reservados.</p>
+    </div>
   </footer>
 
   <script src="script.js"></script>

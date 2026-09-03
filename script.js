@@ -38,11 +38,14 @@ function mostrarProductos(productos) {
     card.classList.add("card-producto");
 
     card.innerHTML = `
-      <img src="${producto.thumbnail}" alt="${producto.title}" />
-      <h3>${producto.title}</h3>
-      <p>${producto.description.substring(0, 80)}...</p>
-      <p class="precio">$${producto.price}</p>
-      <button class="btn-agregar" data-id="${producto.id}">Add to cart</button>
+      <div class="card-media">
+        <img src="${producto.thumbnail}" alt="${producto.title}" loading="lazy" />
+        <span class="card-price">$${producto.price}</span>
+      </div>
+      <div class="card-body">
+        <h3>${producto.title}</h3>
+        <button class="btn-agregar card-cta" data-id="${producto.id}">Add to cart</button>
+      </div>
     `;
 
     catalogo.appendChild(card);
@@ -150,7 +153,7 @@ function renderizarPanelCarrito() {
   panelItems.innerHTML = "";
 
   if (carrito.length === 0) {
-    panelItems.innerHTML = `<p class="carrito-vacio-mensaje">Your cart is empty 🌸</p>`;
+    panelItems.innerHTML = `<p class="carrito-vacio-mensaje">Your cart is feeling a little lonely 🌸</p>`;
     panelTotal.textContent = "$0";
     return;
   }
@@ -292,11 +295,14 @@ function mostrarDestacados(productos) {
     card.classList.add("card-producto");
 
     card.innerHTML = `
-      <img src="${producto.thumbnail}" alt="${producto.title}" />
-      <h3>${producto.title}</h3>
-      <p>${producto.description.substring(0, 70)}...</p>
-      <p class="precio">$${producto.price}</p>
-      <a href="tienda.html">View more</a>
+      <div class="card-media">
+        <img src="${producto.thumbnail}" alt="${producto.title}" loading="lazy" />
+        <span class="card-price">$${producto.price}</span>
+      </div>
+      <div class="card-body">
+        <h3>${producto.title}</h3>
+        <a href="tienda.html" class="card-cta">View more</a>
+      </div>
     `;
 
     destacados.appendChild(card);
@@ -316,7 +322,7 @@ function renderizarPaginaCarrito() {
   if (carrito.length === 0) {
     listaCarrito.innerHTML = `
       <div class="carrito-vacio-pagina">
-        <p>Your cart is empty 🌸</p>
+        <p>Your cart is feeling a little lonely 🌸</p>
         <a href="tienda.html">Go to shop</a>
       </div>
     `;

@@ -3,22 +3,23 @@
   display: flex;
   gap: 40px;
   align-items: flex-start;
-  margin-bottom: 60px;
+  margin-bottom: 72px;
 }
 
 /* --- FORMULARIO --- */
 .formulario-contacto {
   flex: 1;
-  background-color: #fbceb7;
-  border-radius: 16px;
-  padding: 30px;
+  background-color: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  box-shadow: var(--shadow-soft);
 }
 
 .formulario-contacto h3 {
-  font-family: 'Nunito', sans-serif;
-  font-size: 1.4rem;
-  color: #5a3a5a;
-  margin-bottom: 25px;
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: var(--ink);
+  margin-bottom: 26px;
 }
 
 .campo {
@@ -28,49 +29,52 @@
 }
 
 .campo label {
-  font-size: 0.85rem;
-  color: #5a3a5a;
+  font-size: 0.82rem;
+  color: var(--ink);
   margin-bottom: 6px;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .campo input,
 .campo textarea {
-  padding: 10px 15px;
-  border: 2px solid #a4a2cc;
-  border-radius: 10px;
-  font-family: 'Poppins', sans-serif;
+  padding: 12px 16px;
+  border: 2px solid var(--lavanda);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
   font-size: 0.9rem;
-  color: #5a3a5a;
-  background-color: #ffefba;
+  color: var(--ink);
+  background-color: var(--crema);
   resize: vertical;
+  transition: border-color 0.18s ease;
 }
 
 .campo input:focus,
 .campo textarea:focus {
   outline: none;
-  border-color: #d86d9c;
+  border-color: var(--rosa);
 }
 
 .formulario-contacto button {
   width: 100%;
-  padding: 12px;
-  background-color: #d86d9c;
-  color: #ffefba;
+  padding: 13px;
+  background-color: var(--rosa);
+  color: var(--crema);
   border: none;
-  border-radius: 20px;
-  font-family: 'Nunito', sans-serif;
-  font-weight: 700;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-heading);
+  font-weight: 800;
   font-size: 1rem;
   cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease;
 }
 
 .formulario-contacto button:hover {
-  background-color: #a76e9c;
+  background-color: var(--rosa-deep);
+  transform: translateY(-1px);
 }
 
 .error-msg {
-  color: #d86d9c;
+  color: var(--rosa);
   font-size: 0.8rem;
   margin-top: 4px;
   display: block;
@@ -79,15 +83,15 @@
 
 .campo input.input-error,
 .campo textarea.input-error {
-  border-color: #d86d9c;
+  border-color: var(--rosa);
 }
 
 .exito-msg {
   margin-top: 15px;
   text-align: center;
-  color: #a76e9c;
+  color: var(--rosa-deep);
   font-weight: 700;
-  font-family: 'Nunito', sans-serif;
+  font-family: var(--font-heading);
 }
 
 /* --- INFO Y MAPA --- */
@@ -96,26 +100,33 @@
 }
 
 .info-contacto h3 {
-  font-family: 'Nunito', sans-serif;
-  font-size: 1.4rem;
-  color: #a76e9c;
-  margin-bottom: 20px;
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: var(--ink);
+  margin-bottom: 22px;
 }
 
 .datos {
   list-style: none;
-  margin-bottom: 25px;
+  margin-bottom: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .datos li {
   font-size: 0.95rem;
-  color: #5a3a5a;
-  margin-bottom: 10px;
+  color: var(--ink);
+  background-color: var(--white);
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-soft);
 }
 
 .info-contacto iframe {
-  border-radius: 16px;
+  border-radius: var(--radius-lg);
   width: 100%;
+  box-shadow: var(--shadow-soft);
 }
 
 /* ================================
@@ -135,7 +146,7 @@
 
 @media (max-width: 480px) {
   .formulario-contacto {
-    padding: 20px;
+    padding: 22px;
   }
 
   .campo input,

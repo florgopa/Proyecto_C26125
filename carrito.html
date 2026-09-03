@@ -9,25 +9,28 @@
 </head>
 <body>
 
-  <!-- ENCABEZADO -->
-   <header class="banner">
-    <img src="img/logo.svg" alt="Gopa Tech" class="logo-imagen" />
-    <div class="banner-centro">
-      <h2>Creative. Expressive. Productive.</h2>
-      <p>Discover the cutest desk accessories for your setup.</p>
-      <a href="tienda.html">Shop now</a>
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-brand">
+        <img src="img/logo.svg" alt="Gopa Tech" class="logo-imagen" />
+      </a>
+
+      <nav class="navbar-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="tienda.html">Shop</a></li>
+          <li><a href="contacto.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <button class="link-carrito" id="abrir-carrito">
+        <span class="cart-emoji" aria-hidden="true">🛍️</span>
+        <span class="cart-label">Cart</span>
+        <span id="contador-carrito" class="cart-count">(0)</span>
+      </button>
     </div>
   </header>
-
-  <!-- NAVEGACIÓN -->
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="tienda.html">Shop</a></li>
-      <li><a href="contacto.html">Contact</a></li>
-      <li><button class="link-carrito" id="abrir-carrito">Cart<span id="contador-carrito">(0)</span></button></li>
-    </ul>
-  </nav>
 
   <!-- PANEL LATERAL DEL CARRITO -->
   <div id="fondo-carrito" class="fondo-carrito"></div>
@@ -52,7 +55,7 @@
 
     <!-- TÍTULO -->
     <section class="titulo-pagina">
-      <h2>Tu Cart de Compras</h2>
+      <h1>Tu Cart de Compras</h1>
       <p>Review, edit and confirm your order 🛍️</p>
     </section>
 
@@ -76,15 +79,17 @@
 
   <!-- PIE DE PÁGINA -->
   <footer>
-    <p>© 2025 Gopa Tech. Todos los derechos reservados.</p>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="tienda.html">Shop</a></li>
-        <li><a href="contacto.html">Contact</a></li>
-        <li><a href="carrito.html">Cart</a></li>
-      </ul>
-    </nav>
+    <div class="footer-inner">
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="tienda.html">Shop</a></li>
+          <li><a href="contacto.html">Contact</a></li>
+          <li><a href="carrito.html">Cart</a></li>
+        </ul>
+      </nav>
+      <p>© 2025 Gopa Tech. Todos los derechos reservados.</p>
+    </div>
   </footer>
 
   <script src="script.js"></script>
